@@ -1,2 +1,2 @@
 # whois-abdul.github.io
-Abdul's online CV
+Abdul's CV
