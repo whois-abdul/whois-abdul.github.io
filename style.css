@@ -2,6 +2,8 @@ body {
   background: #1B1B25;
   color: #fff;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px; /* Base font size for better scaling */
+  line-height: 1.6; /* Default line height for body text */
 }
 
 .separator {
@@ -9,38 +11,192 @@ body {
 }
 
 .title {
-  margin-top: 100px;
+  margin-top: 80px; /* Slightly reduced top margin */
+  margin-bottom: 20px; /* Increased bottom margin */
+}
+.title h1 {
+  font-size: 4.5rem; /* Larger main title */
+  letter-spacing: .2rem;
   margin-bottom: 10px;
+}
+.title h3 {
+  font-size: 2.2rem; /* Adjusted subtitle size */
+  letter-spacing: .1rem;
+  margin-bottom: 15px;
+}
+.title h4 {
+  font-size: 1.8rem; /* Adjusted link size */
+  margin-bottom: 20px;
 }
 .title a {
   color: #DB4D57;
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover */
 }
 .title a:hover {
   text-decoration: none;
   font-weight: bold;
+  color: #FF6B7A; /* Slightly brighter on hover */
 }
 .title hr {
   width: 75%;
+  border-color: #DB4D57; /* Accent color for the HR line */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.title .list-inline {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.title .list-inline li i {
+  font-size: 3.5rem; /* Larger icons */
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for icons */
+}
+.title .list-inline li i:hover {
+  transform: scale(1.2); /* Enlarge icons on hover */
 }
 
 .summary {
   padding: 20px;
+  margin-top: 30px; /* Add some top margin for separation */
+}
+.summary h2, .work-experience h2, .skills h2 { /* Target all main section headings */
+  font-size: 3.5rem; /* Larger size for main section headings */
+  margin-bottom: 40px; /* More space below main headings */
+  color: #DB4D57; /* Use accent color for main headings */
+  text-transform: uppercase;
+  letter-spacing: .1rem;
 }
 .summary p {
-  font-size: 1.6rem;
-  letter-spacing: .2rem;
+  font-size: 1.7rem; /* Slightly larger font for summary */
+  letter-spacing: .05rem; /* Tighter letter spacing for better readability */
+  line-height: 1.8; /* Improved line height */
+  margin-bottom: 20px; /* Space between paragraphs */
 }
 .work-experience {
   padding: 20px;
+  margin-top: 50px; /* Ensure consistent top margin for sections */
 }
 .work-experience .experience-title {
   margin-top: 50px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align items */
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
 }
+.work-experience .experience-title:hover {
+  transform: translateX(10px); /* Move slightly on hover */
+}
+
+.work-experience .experience-title .company-logo {
+  height: 45px; /* Slightly larger logo */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* More space between logo and text */
+  border-radius: 5px; /* Slightly rounded corners for logos */
+}
+
+.work-experience .experience-title h3 {
+  font-size: 2.4rem; /* Bigger company name */
+  margin: 0; /* Reset margin to prevent extra space */
+  line-height: 1.2; /* Tighter line height for company name */
+}
+
+.work-experience .experience-title h4 {
+  font-size: 1.8rem; /* Bigger role */
+  margin-top: 5px; /* Space between company name and role */
+  color: #ccc; /* Slightly lighter color for role */
+}
+
+.work-experience .experience-title .col-md-4 {
+  text-align: right; /* Ensure year and location are right-aligned */
+}
+
+.work-experience .experience-title .col-md-4 h3 {
+  font-size: 1.8rem; /* Year font size */
+  margin-bottom: 5px; /* Space between year and location */
+}
+
+.work-experience .experience-title .location {
+  font-size: 1.4rem; /* Smaller font for location */
+  color: #aaa; /* Lighter color for location */
+  margin-top: 0;
+}
+
 .work-experience .experience-summary {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-top: 20px; /* Reduced margin for tighter spacing */
+  margin-bottom: 40px; /* Slightly reduced bottom margin */
 }
-.work-experience p {
-  font-size: 1.6rem;
-  letter-spacing: .2rem;
+.work-experience p, .work-experience ul li { /* Apply to paragraphs and list items */
+  font-size: 1.5rem; /* Consistent font size with skills section */
+  letter-spacing: .05rem;
+  line-height: 1.8;
+}
+.work-experience ul {
+  list-style: none;
+  padding-left: 0;
+}
+.work-experience ul li {
+  position: relative;
+  padding-left: 25px; /* Space for custom bullet */
+}
+.work-experience ul li:before {
+  content: '\2022'; /* Unicode for a bullet point */
+  color: #DB4D57; /* Accent color for bullet points */
+  position: absolute;
+  left: 0;
+  font-size: 1.8rem; /* Larger bullet point */
+  top: 0; /* Align bullet point to the top of the line */
+}
+
+.skills {
+  padding: 20px;
+  margin-top: 50px; /* Add some space above the skills section */
+}
+
+.skills .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px; /* Compensate for column padding/margin */
+  margin-right: -10px; /* Compensate for column padding/margin */
+}
+
+.skills .row > div { /* Target the columns within the skills section */
+  background-color: #2A2A3A; /* Slightly lighter background for skill cards */
+  padding: 25px;
+  margin-bottom: 20px; /* Space between skill cards */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  flex: 1 1 calc(50% - 20px); /* Distribute space for two columns with 20px gap */
+  margin: 0 10px 20px 10px; /* Add horizontal margin for spacing between cards */
+}
+
+.skills h3 {
+  margin-top: 0; /* Reset top margin as padding is on parent div */
+  margin-bottom: 20px;
+  color: #DB4D57; /* Use the accent color for skill categories */
+  font-size: 2rem; /* Slightly larger font for category titles */
+  text-transform: uppercase; /* Make category titles uppercase */
+  letter-spacing: .15rem;
+}
+
+.skills ul {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding */
+}
+
+.skills ul li {
+  font-size: 1.5rem; /* Slightly larger font for skill items */
+  letter-spacing: .05rem;
+  line-height: 2; /* Improve line spacing for readability */
+  position: relative;
+  padding-left: 25px; /* Space for custom bullet */
+}
+
+.skills ul li:before {
+  content: '\2022'; /* Unicode for a bullet point */
+  color: #DB4D57; /* Accent color for bullet points */
+  position: absolute;
+  left: 0;
+  font-size: 1.8rem; /* Larger bullet point */
+  top: 0; /* Align bullet point to the top of the line */
 }
